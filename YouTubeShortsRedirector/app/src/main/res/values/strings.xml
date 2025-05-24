@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">YT Shorts Redirect</string> <!-- Or your app name -->
+
+    <string name="accessibility_service_description">Allows redirecting YouTube Shorts to the standard player. Needs to observe YouTube app activity and interact with its UI (Share, Copy Link).</string>
+    <string name="accessibility_service_label">Shorts Redirect Service</string>
+
+    <string name="accessibility_settings_info">For this app to work, you must enable its Accessibility Service in Android settings. This allows it to detect YouTube Shorts and manage redirection.</string>
+    <string name="open_accessibility_settings">Open Accessibility Settings</string>
+
+    <string name="status_service_enabled">Accessibility Service: ENABLED</string>
+    <string name="status_service_disabled">Accessibility Service: DISABLED</string>
+
+    <string name="enable_redirection_functionality">Enable Shorts Redirection Logic</string>
+    <string name="reset_service_flags">Reset Service Internal State</string>
+
+    <string name="app_limitations_info"><b>Important:</b> This app relies on the YouTube app\'s UI structure. Updates to the YouTube app can break this functionality. If it stops working, please check for an update to this app or be aware that it might require manual adjustments in future versions.</string>
+</resources>
