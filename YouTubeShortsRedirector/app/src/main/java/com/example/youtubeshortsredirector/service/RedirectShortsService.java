@@ -400,20 +400,22 @@ public class RedirectShortsService extends AccessibilityService {
             }
             if (videoId != null) {
                 Log.i(TAG, "Extracted Video ID: " + videoId);
-                Log.d(TAG, "Attempting GLOBAL_ACTION_BACK to exit Shorts UI/Share Sheet.");
-                boolean back1 = performGlobalAction(GLOBAL_ACTION_BACK);
-                Log.d(TAG, "First GLOBAL_ACTION_BACK: " + back1);
-                try {
-                    Thread.sleep(200); // Adjusted sleep duration
-                } catch (InterruptedException e) {
-                    Thread.currentThread().interrupt();
-                    Log.w(TAG, "Delay after back press interrupted.");
+                if (detectShortsPlayer(getRootInActiveWindow())) {
+                    Log.d(TAG, "Attempting GLOBAL_ACTION_BACK to exit Shorts UI/Share Sheet.");
+                    boolean back1 = performGlobalAction(GLOBAL_ACTION_BACK);
+                    Log.d(TAG, "First GLOBAL_ACTION_BACK: " + back1);
+                    try {
+                        Thread.sleep(200); // Adjusted sleep duration
+                    } catch (InterruptedException e) {
+                        Thread.currentThread().interrupt();
+                        Log.w(TAG, "Delay after back press interrupted.");
+                    }
                 }
                 String standardUrl = "https://www.youtube.com/watch?v=" + videoId;
                 Log.i(TAG, "Redirecting to: " + standardUrl);
                 Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(standardUrl));
                 intent.setPackage(YOUTUBE_PACKAGE_NAME);
-                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 try {
                     startActivity(intent);
                     Log.i(TAG, "Redirection intent launched.");
