@@ -43,6 +43,7 @@ public class RedirectShortsService extends AccessibilityService {
             "com.google.android.youtube:id/shorts_player_view_pager" // Example
             // Add more valid IDs here
     };
+    private static final String FULLSCREEN_NUTTON_ID = "com.google.android.youtube:id/fullscreen_button";
 
     private static final String HEBREW_SHARE_CONTENT_DESCRIPTION = "שיתוף הסרטון הזה";
     private static final String ENGLISH_SHARE_CONTENT_DESCRIPTION = "Share this video"; // Verify exact string
@@ -159,12 +160,12 @@ public class RedirectShortsService extends AccessibilityService {
             return;
         }
 
-        Log.v(TAG, "onAccessibilityEvent - START. isProcessingShort: " + isProcessingShort +
-                ", isWaitingShare: " + isWaitingForShareSheet +
-                ", isWaitingOwnActivity: " + isWaitingForOwnActivityFocus +
-                ", findShareAttempts: " + findShareAttemptCount +
-                ", EventType: " + AccessibilityEvent.eventTypeToString(event.getEventType()) +
-                ", ClassName: " + event.getClassName());
+//        Log.v(TAG, "onAccessibilityEvent - START. isProcessingShort: " + isProcessingShort +
+//                ", isWaitingShare: " + isWaitingForShareSheet +
+//                ", isWaitingOwnActivity: " + isWaitingForOwnActivityFocus +
+//                ", findShareAttempts: " + findShareAttemptCount +
+//                ", EventType: " + AccessibilityEvent.eventTypeToString(event.getEventType()) +
+//                ", ClassName: " + event.getClassName());
 
         if (event.getPackageName() == null || !event.getPackageName().toString().equals(YOUTUBE_PACKAGE_NAME)) {
             return;
