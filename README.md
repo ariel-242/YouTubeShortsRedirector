@@ -4,6 +4,25 @@
 
 ---
 
+## Table of Contents
+1. [Overview](#overview)
+2. [Features](#features)
+   - [Android App](#android-app)
+   - [Chrome Extension](#chrome-extension)
+3. [How It Works](#how-it-works)
+   - [Android](#android)
+   - [Chrome Extension](#chrome-extension-1)
+4. [Installation](#installation)
+   - [Android App](#android-app-1)
+   - [Chrome Extension](#chrome-extension-2)
+5. [Code Structure](#code-structure)
+6. [Disclaimer & Privacy Notice](#disclaimer--privacy-notice)
+7. [Contributing](#contributing)
+8. [License](#license)
+9. [Credits](#credits)
+
+---
+
 ## Overview
 
 YouTubeShortsRedirector is a dual-solution designed to automatically redirect YouTube Shorts videos to their standard video pages for improved viewing and usability. It provides both:
@@ -55,14 +74,24 @@ YouTubeShortsRedirector is a dual-solution designed to automatically redirect Yo
 
 ### Android App
 
-1. **Build from Source:** Clone the repo and open `AndroidApp/YouTubeShortsRedirector` in Android Studio.
-2. **Install APK:** Build and install on your device.
-3. **Enable Accessibility Service:** Follow on-screen instructions in the app.
+1. **Download APK:**  
+   Get the latest `.apk` file from the [Releases](../../releases) page.
+2. **Install:**  
+   Transfer the APK to your Android device and open it to install.  
+   (Enable "Install from unknown sources" in your device settings if required.)
+3. **Enable Accessibility Service:**  
+   Open the app and follow the on-screen instructions to activate the service.
 
 ### Chrome Extension
 
-1. **Load Extension:** Go to `chrome://extensions`, enable Developer Mode, and load the `Chrome extension/youtube-shorts-redirector` directory.
-2. **Configure:** Use the extension popup to toggle redirect functionality.
+1. **Download Extension:**  
+   Get the latest `.zip` file from the [Releases](../../releases) page and extract it.
+2. **Load in Chrome:**  
+   - Open `chrome://extensions/`
+   - Enable **Developer Mode** (top right)
+   - Click **Load unpacked** and select the extracted folder
+3. **Configure:**  
+   Use the extension popup to toggle redirect functionality.
 
 ---
 
@@ -72,6 +101,14 @@ YouTubeShortsRedirector is a dual-solution designed to automatically redirect Yo
 - `app/src/main/java/com/example/youtubeshortsredirector/ClipboardAccessActivity.java`: Handles clipboard reading for URL extraction.
 - `youtube-shorts-redirector/background.js`: Chrome extension redirect logic.
 - `youtube-shorts-redirector/popup.js`: Extension popup UI for enabling/disabling.
+
+---
+
+## Disclaimer & Privacy Notice
+
+YouTubeShortsRedirector App uses Android’s Accessibility Service **only** to detect when a YouTube Shorts video is playing and automatically redirect it to the standard YouTube video page for improved viewing. The app **does not collect, store, or transmit any personal or sensitive user data**.
+
+By using this app, you acknowledge that Accessibility permissions are necessary for this functionality and that you enable them voluntarily. Please only install the APK from trusted sources and use it responsibly.
 
 ---
 
