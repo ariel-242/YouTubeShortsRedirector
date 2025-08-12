@@ -55,7 +55,7 @@ YouTubeShortsRedirector is a dual-solution designed to automatically redirect Yo
 
 ### Android App
 
-1. **Build from Source:** Clone the repo and open `Android App/YouTubeShortsRedirector` in Android Studio.
+1. **Build from Source:** Clone the repo and open `AndroidApp/YouTubeShortsRedirector` in Android Studio.
 2. **Install APK:** Build and install on your device.
 3. **Enable Accessibility Service:** Follow on-screen instructions in the app.
 
